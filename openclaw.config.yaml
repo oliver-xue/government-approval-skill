@@ -1,0 +1,42 @@
+# OpenClaw 平台配置
+runtime:
+  model: deepseek-v3
+  temperature: 0.1
+
+skills:
+  - name: 'government.approval'
+    path: './dist/GovernmentApprovalSkill.js'
+    config:
+      enabled: true
+      maxConcurrent: 5
+      timeout: 300000
+      retry: 2
+
+tools:
+  file_parser:
+    enabled: true
+    maxFileSize: 10485760
+    supportedFormats: ['pdf', 'docx', 'txt', 'md']
+
+  ocr_engine:
+    enabled: true
+    engine: 'paddle'
+    languages: ['zh', 'en']
+
+  llm_judge:
+    enabled: true
+    model: 'deepseek-v3'
+    temperature: 0.1
+    maxTokens: 2000
+    timeout: 60000
+
+  doc_generator:
+    enabled: true
+    templatesDir: './templates'
+    defaultFormat: 'docx'
+
+  knowledge_base:
+    enabled: false
+    vectorStore: './data/vector_db'
+    embeddings: 'bge-large-zh'
+    chunkSize: 500

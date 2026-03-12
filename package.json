@@ -1,0 +1,48 @@
+{
+  "name": "government-approval-skill",
+  "version": "1.0.0",
+  "description": "基于OpenClaw的政府审批自动化Skill",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src --ext .ts",
+    "prepublishOnly": "npm run build",
+    "prepack": "npm run build",
+    "postpack": "rm -rf dist"
+  },
+  "keywords": [
+    "openclaw",
+    "skill",
+    "government",
+    "approval",
+    "ai",
+    "automation"
+  ],
+  "author": "你的名字 <your@email.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/government-approval-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/government-approval-skill/issues"
+  },
+  "homepage": "https://github.com/yourusername/government-approval-skill#readme",
+  "files": [
+    "dist",
+    "README.md",
+    "skill.md",
+    "LICENSE"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {
+    "@openclaw/core": "^0.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
